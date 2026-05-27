@@ -324,6 +324,31 @@ Hello from Anonymous Inner Class
 
 ---
 
+## Why Can't an Outer Class Be `static`?
+
+> ⚠️ A **top-level (outer) class cannot be declared as `static`**.
+
+The `static` keyword is applicable only to **class members** (fields, methods, nested classes). An outer class is **not a member of any other class**, so `static` has no meaning for it.
+
+```java
+// ❌ Compile Error
+static class Outer {
+}
+
+// ✅ Allowed — static only on nested class
+class Outer {
+    static class Inner { // This is valid
+    }
+}
+```
+
+| Class Type | Can Be `static`? | Reason |
+|------------|-----------------|--------|
+| **Top-level (Outer) class** | ❌ No | Not a member of any class |
+| **Static Nested Class** | ✅ Yes | Is a member of the outer class |
+
+---
+
 ## Advantages & Disadvantages
 
 ### ✅ Advantages
