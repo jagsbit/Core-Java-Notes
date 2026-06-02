@@ -488,3 +488,16 @@ Module built on top of JPA/Hibernate
 
 ### Spring Data JPA
 > Spring Data JPA is a Spring Data module that reduces boilerplate code for JPA/Hibernate.
+
+---
+
+## 18. How Spring Data JPA Works Internally
+
+Spring Data JPA:
+
+1. Scans repository interfaces
+2. Creates proxy implementation
+3. Generates queries
+4. Connects with Hibernate
+5. Hibernate generates SQL
+6. JDBC driver executes SQL
